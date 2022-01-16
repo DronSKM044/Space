@@ -40,14 +40,34 @@ body {
 }
 
 .planet-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     display: block;
     width: 20px;
     height: 20px;
-    margin: 10px;
     background-color: hotpink;
     border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
 
+@keyframes planet_move {
+    from {
+        transform: rotate(0deg) translateX(-250px) rotate(0deg);
+    }
 
+    to {
+        transform: rotate(360deg) translateX(-250px) rotate(-360deg);
+    }
+}
+
+.item-1 {
+    /* transform: translate(-300px, -50%); */
+    animation: planet_move 10s linear infinite;
+}
+
+.item-2 {
+    animation: planet_move 9s linear infinite;
 }
 
 .planets__orbits {
