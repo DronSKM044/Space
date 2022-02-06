@@ -9,6 +9,10 @@
     --distance: 100px;
 }
 
+body {
+    min-height: 100%;
+}
+
 .header {
     position: absolute;
     top: 0;
@@ -22,7 +26,9 @@
     display: grid;
     grid-template-rows: 0 100vh 100vh 100vh 100vh;
     text-align: center;
-    background-color: rgb(7, 7, 7);
+    background-color: rgba(7, 7, 7, 1);
+    background-image: url('../images/sky-pattern-2.jpg'), url('../images/sky-pattern.jpg');
+    background-blend-mode: color-dodge;
 }
 
 /* Main > planets */
@@ -30,27 +36,45 @@
 @keyframes line_move {
 
     to {
-        stroke-dasharray: 1100 10000;
-        stroke-width: 1;
-        opacity: 1;
+        opacity: 0.7;
+        stroke-dashoffset: 0;
     }
 }
 
 .line {
-    /* stroke: rgba(214, 153, 22, 0.575); */
-    stroke-dashoffset: 0 0;
-    stroke-width: 0;
+    stroke-width: 2;
     opacity: 0;
-    animation: line_move 5s ease-in-out infinite;
-    stroke-dasharray: 0 10000;
+    animation: line_move 8s linear both;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
 }
 
 .cross_line-2 {
+    stroke-dashoffset: -2000;
+    animation-duration: 10s;
     animation-delay: 4s;
 }
 
 .x-axis {
+    animation-duration: 15s;
+    animation-delay: 3s;
+}
+
+.x-axis-clone {
+    opacity: 0.9;
+    animation-duration: 12s;
+    animation-delay: 7s;
+}
+
+.y-axis {
+    animation-duration: 8s;
+    animation-delay: 7s;
+}
+
+.y-axis-clone {
+    opacity: 0.9;
     animation-duration: 10s;
+    animation-delay: 12s;
 }
 
 @keyframes circle_animate-1 {
@@ -65,11 +89,21 @@
     }
 }
 
-.circle-3 {
+.circle {
+    stroke-width: 2;
+}
 
+.circle-1 {
+    stroke-dasharray: calc(2*3.14*650);
+    stroke-dashoffset: calc(2*3.14*650);
+    animation: circle_animate-1 10s 1.5s linear both;
+}
+
+
+.circle-3 {
     stroke-dasharray: calc(2*3.14*450);
     stroke-dashoffset: calc(2*3.14*450);
-    animation: circle_animate-1 5s 1s ease-in-out both;
+    animation: circle_animate-1 7s 1s ease-in-out both;
 }
 
 .circle-2 {
@@ -78,11 +112,29 @@
     animation: circle_animate-1 5s linear both;
 }
 
+.circle-4 {
+    stroke-dasharray: calc(2*3.14*280);
+    stroke-dashoffset: calc(-2*3.14*280);
+    animation: circle_animate-1 5s 1.5s linear both;
+}
+
+.circle-4_1 {
+    opacity: 0;
+    animation: circle_animate-2 2s linear both;
+}
+
+.circle-4_2 {
+    stroke-width: 29;
+    opacity: 0;
+    animation: circle_animate-2 5s 5s linear both;
+}
+
 .circle-5,
 .circle-6,
-.circle-7 {
+.circle-7,
+.circle-8 {
     opacity: 0;
-    animation: circle_animate-2 5s linear both;
+    animation: circle_animate-2 6s linear both;
 }
 
 .circle-5 {
@@ -93,9 +145,21 @@
     animation-delay: 1.2s;
 }
 
-.circle-3 {
-    animation-delay: .9s;
+.circle-8 {
+    animation-duration: 2s;
+    animation-delay: 3s;
 }
+
+.star {
+    opacity: 0;
+    animation: circle_animate-2 6s linear both;
+    filter: drop-shadow(0px 0px 5px rgb(177, 177, 18)) drop-shadow(0px 0px 10px rgb(245, 245, 0));
+    -webkit-filter: drop-shadow(0px 0px 5px rgb(177, 177, 18)) drop-shadow(0px 0px 10px rgb(245, 245, 0));
+    -moz-filter: drop-shadow(0px 0px 5px rgb(177, 177, 18)) drop-shadow(0px 0px 10px rgb(245, 245, 0));
+    -o-filter: drop-shadow(0px 0px 5px rgb(177, 177, 18)) drop-shadow(0px 0px 10px rgb(245, 245, 0));
+}
+
+/* Planets nav */
 
 .planets-navigation {
     position: absolute;
@@ -104,11 +168,12 @@
     width: 50px;
     height: 50px;
     transform: translate(-50%, -50%);
-    background-color: green;
 }
 
 .planets__planets-list {
     list-style: none;
+    opacity: 0;
+    animation: circle_animate-2 4s 5s linear both;
 }
 
 .planet-item {
@@ -119,6 +184,7 @@
     height: 50px;
     background-color: rgb(185, 185, 185);
     border-radius: 50%;
+
 }
 
 .planet-item:hover {
@@ -126,46 +192,68 @@
     cursor: pointer;
 }
 
-@keyframes planet_move {
+
+@keyframes item-2_move {
 
     from {
-        transform: rotate(0deg) translateX(var(--distance)) rotate(0deg);
+        transform: rotate(0deg) translateX(320px) rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg) translateX(var(--distance)) rotate(-360deg);
+        transform: rotate(-360deg) translateX(320px) rotate(360deg);
+    }
+
+}
+
+@keyframes item-2_after_move {
+
+    from {
+        transform: rotate(0deg) translate(-50px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(-50px) rotate(-360deg);
+    }
+
+}
+
+@keyframes item-3_move {
+
+    from {
+        transform: rotate(0deg) translateX(120px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(120px) rotate(-360deg);
+    }
+
+}
+
+@keyframes item-4_move {
+
+    from {
+        transform: rotate(0deg) translateX(-180px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(-180px) rotate(-360deg);
     }
 
 }
 
 
 .item-1 {
-    width: 10%;
-    height: 20%;
     background-color: rgba(26, 26, 27, 1);
 }
 
-.planet-item__planet-1 {
-    height: 100%;
-    font-size: 50px;
-}
 
 
 
 .item-2 {
-    animation: planet_move 145s linear infinite;
+    animation: item-2_move 250s linear infinite;
 }
 
-.item-3 {
-    transform-origin: -100px -100px;
-    animation: planet_move 10s linear infinite;
-}
-
-.planet-item-link {
-    animation: text_move 10s linear infinite;
-}
-
-.item-3::before {
+.item-2::before {
     content: "";
     display: block;
     position: relative;
@@ -179,16 +267,63 @@
     border-radius: 50%;
 }
 
-
-
-.planet-3__link {
+.item-2::after {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 100%;
-    animation: text_move 10s linear infinite;
-
+    height: 25%;
+    width: 25%;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(185, 185, 185);
+    border-radius: 50%;
+    animation: item-2_after_move 80s linear infinite;
 
 }
+
+
+.item-3 {
+    animation: item-3_move 180s linear infinite;
+}
+
+.item-3::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    border: 2px solid coral;
+    border-radius: 50%;
+}
+
+.item-4 {
+    animation: item-4_move 130s linear infinite;
+}
+
+.item-4::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    border: 2px solid coral;
+    border-radius: 50%;
+}
+
+
+.planet-link {
+    position: absolute;
+    width: 100px;
+    top: 0;
+    left: 110%;
+    color: white;
+}
+
 
 .planets__orbits {
     width: 100%;
