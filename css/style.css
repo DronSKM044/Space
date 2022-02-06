@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+:root {
+
+    --distance: 100px;
+}
+
 .header {
     position: absolute;
     top: 0;
@@ -48,30 +53,49 @@
     animation-duration: 10s;
 }
 
-@keyframes circle_animate {
+@keyframes circle_animate-1 {
     to {
         stroke-dashoffset: 0;
     }
 }
 
+@keyframes circle_animate-2 {
+    to {
+        opacity: 1;
+    }
+}
 
 .circle-3 {
 
-    stroke-dasharray: calc(2*3.14*300);
-    stroke-dashoffset: calc(2*3.14*300);
-    animation: circle_animate 5s linear both;
+    stroke-dasharray: calc(2*3.14*450);
+    stroke-dashoffset: calc(2*3.14*450);
+    animation: circle_animate-1 5s 1s ease-in-out both;
 }
 
 .circle-2 {
-
     stroke-dasharray: 2512;
     stroke-dashoffset: -2512;
-    animation: circle_animate 5s linear both;
+    animation: circle_animate-1 5s linear both;
 }
 
+.circle-5,
+.circle-6,
+.circle-7 {
+    opacity: 0;
+    animation: circle_animate-2 5s linear both;
+}
 
+.circle-5 {
+    animation-delay: 1s;
+}
 
+.circle-6 {
+    animation-delay: 1.2s;
+}
 
+.circle-3 {
+    animation-delay: .9s;
+}
 
 .planets-navigation {
     position: absolute;
@@ -95,22 +119,23 @@
     height: 50px;
     background-color: rgb(185, 185, 185);
     border-radius: 50%;
-    /* transform: translate(-50%, -50%); */
+}
+
+.planet-item:hover {
+    animation-play-state: paused;
+    cursor: pointer;
 }
 
 @keyframes planet_move {
 
     from {
-        transform: rotate(0deg) translateX(-500%) rotate(0deg);
+        transform: rotate(0deg) translateX(var(--distance)) rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg) translateX(-500%) rotate(-360deg);
+        transform: rotate(360deg) translateX(var(--distance)) rotate(-360deg);
     }
 
-    /* 100% {
-        transform: rotate(-360deg);
-    } */
 }
 
 
@@ -122,9 +147,6 @@
 
 .planet-item__planet-1 {
     height: 100%;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     font-size: 50px;
 }
 
@@ -140,7 +162,6 @@
 }
 
 .planet-item-link {
-    /* transform-origin: -100px -100px; */
     animation: text_move 10s linear infinite;
 }
 
