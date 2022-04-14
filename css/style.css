@@ -332,9 +332,24 @@ body {
 }
 
 .about-wrapper {
+    display: grid;
+    grid-template-columns: 40% auto;
+    grid-template-rows: 30px auto;
     width: 80%;
     height: 100%;
     margin: 0 auto;
+    padding: 20px;
     background-color: whitesmoke;
     color: black;
+}
+
+.planet-1__title-about {
+    grid-column: 1/3;
+}
+
+.my-photo {
+    width: 100%;
+    height: auto;
+    grid-column: 1/2;
+    grid-row: 2/3;
 }
