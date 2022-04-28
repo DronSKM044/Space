@@ -15,7 +15,7 @@
     font-weight: 800;
 }
 
-/* @font-face {
+@font-face {
     font-family: "Rubik";
     src: url(../fonts/rubik/rubik-400.woff2);
     font-weight: 400;
@@ -25,7 +25,7 @@
     font-family: "Rubik";
     src: url(../fonts/rubik/rubik-700.woff2);
     font-weight: 700;
-} */
+}
 
 body {
     display: flex;
@@ -202,12 +202,19 @@ h1 {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 50px;
-    height: 50px;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transform: translate(-50%, -50%);
 }
 
 .planets__planets-list {
+    position: relative;
+    height: inherit;
+    width: inherit;
     list-style: none;
     opacity: 0;
     animation: circle_animate-2 4s 5s linear both;
@@ -215,8 +222,8 @@ h1 {
 
 .planet-item {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     width: 50px;
     height: 50px;
     /* background-color: rgb(185, 185, 185); */
@@ -224,6 +231,7 @@ h1 {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+    transform: translate(-50%, -50%);
 
 }
 
@@ -233,14 +241,35 @@ h1 {
 }
 
 
+@keyframes item-1_move {
+    0% {
+        transform: translate(-50%, -50%) translateY(0px)
+    }
+
+    25% {
+        transform: translate(-50%, -50%) translateY(-10px)
+    }
+
+    75% {
+        transform: translate(-50%, -50%) translateY(0px)
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateY(0px)
+    }
+}
+
 @keyframes item-2_move {
 
+
     from {
-        transform: rotate(0deg) translateX(320px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0) translateX(200px) rotate(360deg);
     }
 
     to {
-        transform: rotate(-360deg) translateX(320px) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(0);
+
+
     }
 
 }
@@ -248,11 +277,11 @@ h1 {
 @keyframes item-2_after_move {
 
     from {
-        transform: rotate(0deg) translate(-50px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateX(35px) rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg) translateX(-50px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateX(35px) rotate(-360deg);
     }
 
 }
@@ -260,11 +289,11 @@ h1 {
 @keyframes item-3_move {
 
     from {
-        transform: rotate(0deg) translateX(120px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateX(120px) rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg) translateX(120px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg);
     }
 
 }
@@ -272,25 +301,32 @@ h1 {
 @keyframes item-4_move {
 
     from {
-        transform: rotate(0deg) translateX(-180px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translateX(-320px) rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg) translateX(-180px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translateX(-320px) rotate(-360deg);
     }
 
 }
 
 
 .item-1 {
+
+    display: inline-block;
+    width: 100px;
+    height: 100px;
     background-color: rgba(26, 26, 27, 1);
+    background-image: url('../images/assets/3700_5_03.png');
+    animation: item-1_move 10s linear infinite;
+    overflow: hidden;
 }
 
 
 
 
 .item-2 {
-    animation: item-2_move 250s linear infinite;
+    animation: item-2_move 25s linear infinite;
     background-image: url('../images/earth.png');
 
 }
@@ -318,7 +354,7 @@ h1 {
     left: 50%;
     background-color: rgb(185, 185, 185);
     border-radius: 50%;
-    animation: item-2_after_move 80s linear infinite;
+    animation: item-2_after_move 8s linear infinite reverse;
 
 }
 
@@ -528,6 +564,7 @@ h1 {
     align-items: flex-start;
     width: 80%;
     margin: 0 auto;
+    padding: 20px;
     overflow: hidden;
     list-style: none;
     perspective: 1000px;
