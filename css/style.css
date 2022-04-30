@@ -478,6 +478,9 @@ h1 {
 
 
 
+.paralax-earth {
+    background: url(../images/moon-2285628_1280.jpg) fixed;
+}
 
 .about-wrapper {
     position: relative;
@@ -560,6 +563,9 @@ h1 {
 
 
 
+.gallery-wrapper {
+    position: relative;
+}
 
 .galerry-list {
     display: flex;
@@ -571,6 +577,7 @@ h1 {
     list-style: none;
     /* perspective: 1000px;
     transform-style: preserve-3d; */
+
 }
 
 
@@ -599,6 +606,7 @@ h1 {
 
 .gallery-picture-item:nth-of-type(2n) .picture-link {
     order: 2;
+    transform: rotateY(-10deg) translateZ(-100px);
 }
 
 /* .gallery-picture-item:hover {
@@ -637,3 +645,22 @@ h1 {
     background-repeat: no-repeat;
     background-position: 100px;
 } */
+
+.paralax-wrapper {
+    height: 60vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.paralax-mars {
+    background: url(../images/onTheMars.jpg) fixed;
+}
+
+.footer {
+    height: 30vh;
+    background: url(../images/onTheMoon.jpg) no-repeat;
+    background-position: bottom;
+    background-size: cover;
+
+}
