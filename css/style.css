@@ -602,6 +602,7 @@ h1 {
     width: 75%;
     height: auto;
     transform: rotateY(10deg) translateZ(-100px);
+    overflow: hidden;
 }
 
 .gallery-picture-item:nth-of-type(2n) .picture-link {
@@ -618,6 +619,7 @@ h1 {
     width: 100%;
     height: auto;
     border-radius: 5px;
+
 }
 
 .picture-link::before {
@@ -633,18 +635,22 @@ h1 {
 
 }
 
-/* .picture-link::after {
+.picture-link::after {
     content: "";
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 98%;
+    left: -50%;
+    width: 20%;
     height: 98%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(45deg, rgba(209, 209, 214, 0.1) 0%, rgba(242, 242, 242, 0.5) 37%, rgba(255, 255, 255, 1) 51%, rgba(246, 246, 246, 0.5) 65%, rgba(170, 170, 170, 0.1) 100%);
+    transform: translate(-50%, -50%) skewX(15deg);
+    background: linear-gradient(90deg, rgba(209, 209, 214, 0) 0%, rgba(242, 242, 242, 0.5) 37%, rgba(255, 255, 255, 1) 51%, rgba(246, 246, 246, 0.5) 65%, rgba(170, 170, 170, 0.0) 100%);
     background-repeat: no-repeat;
-    background-position: 100px;
-} */
+    transition: left .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.picture-link:hover.picture-link:after {
+    left: 150%;
+}
 
 .paralax-wrapper {
     height: 60vh;
