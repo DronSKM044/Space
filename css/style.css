@@ -507,10 +507,92 @@ h1 {
 
 .landing-sigature {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+.signature {
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    font-size: 3rem;
+}
+
+.signature--left {
+    left: -32vw;
+    transform: rotate(-90deg);
+}
+
+.signature--left:first-child {
+    top: 12vh;
+    left: -31vw;
+    transform: rotate(-100deg);
+}
+
+.signature--left:nth-child(2) {
+    top: 6vh;
+    left: -31.5vw;
+    transform: rotate(-100deg);
+}
+
+.signature--left:nth-child(3) {
+    top: 0vh;
+    transform: rotate(-95deg);
+}
+
+.signature--left:nth-child(4) {
+    top: -5vh;
+    transform: rotate(-85deg);
+}
+
+.signature--left:nth-child(5) {
+    top: -15vh;
+    left: -31.5vw;
+    transform: rotate(-77deg);
+}
+
+.signature--left:nth-child(6) {
+    top: -25vh;
+    left: -30.5vw;
+    transform: rotate(-70deg);
+}
+
+.signature--right {
+    left: 32vw;
+    transform: rotate(90deg);
+}
+
+.signature--right:nth-child(7) {
+    top: -25vh;
+    left: 30.5vw;
+    transform: rotate(75deg);
+}
+
+.signature--right:nth-child(8) {
+    top: -15vh;
+    left: 31.5vw;
+}
+
+.signature--right:nth-child(9) {
+    top: -5vh;
+    left: 31.7vw;
+}
+
+.signature--right:nth-child(10) {
+    top: 5vh;
+    left: 31.5vw;
+    transform: rotate(97deg);
+}
+
+.signature--right:nth-child(11) {
+    top: 15vh;
+    left: 30.5vw;
+    transform: rotate(102deg);
+}
+
+
+
 
 
 /* About me */
