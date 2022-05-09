@@ -505,21 +505,38 @@ h1 {
 
 }
 
-.landing-sigature {
+.landing-signature__outer {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 130vh;
+    height: 130vh;
+    border-radius: 50%;
+    border: 2px solid darkgoldenrod;
+}
+
+.landing-signature__inner {
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    /* border: 2px dotted gold; */
 }
 
 .signature {
     position: absolute;
-    display: inline-block;
+    bottom: 50%;
+    left: 50%;
     width: 0;
-    font-size: 3rem;
+    transform-origin: 0 100%;
+    outline: 2px solid gold;
+    padding-bottom: 100px;
+    font-size: 3em;
+    color: white;
+
 }
 
-.signature--left {
+/* .signature--left {
     left: -32vw;
     transform: rotate(-90deg);
 }
@@ -589,7 +606,7 @@ h1 {
     top: 15vh;
     left: 30.5vw;
     transform: rotate(102deg);
-}
+} */
 
 
 
