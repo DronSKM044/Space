@@ -5,8 +5,10 @@ export function rotateMain(value) {
   let deg = 0;
 
   for (let item of inner) {
+    value = value / 5;
+    deg += Math.sin(value / 200) + value / 100;
+    deg += 50;
     item.style.transform = `rotate(${deg}deg)`;
-    deg += Math.sin(value / 200) + Math.cos(value * 0.01);
   }
   requestAnimationFrame(rotateMain);
   return value;

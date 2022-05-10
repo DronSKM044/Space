@@ -210,6 +210,7 @@ h1 {
     align-items: center;
     justify-content: center;
     transform: translate(-50%, -50%);
+    z-index: 99;
 }
 
 .planets__planets-list {
@@ -510,17 +511,18 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 130vh;
-    height: 130vh;
+    width: 150vh;
+    height: 150vh;
     border-radius: 50%;
     border: 2px solid darkgoldenrod;
+    z-index: 1;
 }
 
 .landing-signature__inner {
+    position: absolute;
     top: 50%;
     left: 50%;
-    /* transform: translate(-50%, -50%); */
-    /* border: 2px dotted gold; */
+    transform: translate(-50%, -50%);
 }
 
 .signature {
@@ -529,84 +531,14 @@ h1 {
     left: 50%;
     width: 0;
     transform-origin: 0 100%;
-    outline: 2px solid gold;
-    padding-bottom: 100px;
+    padding-bottom: 470px;
     font-size: 3em;
     color: white;
+    text-transform: uppercase;
 
 }
 
-/* .signature--left {
-    left: -32vw;
-    transform: rotate(-90deg);
-}
 
-.signature--left:first-child {
-    top: 12vh;
-    left: -31vw;
-    transform: rotate(-100deg);
-}
-
-.signature--left:nth-child(2) {
-    top: 6vh;
-    left: -31.5vw;
-    transform: rotate(-100deg);
-}
-
-.signature--left:nth-child(3) {
-    top: 0vh;
-    transform: rotate(-95deg);
-}
-
-.signature--left:nth-child(4) {
-    top: -5vh;
-    transform: rotate(-85deg);
-}
-
-.signature--left:nth-child(5) {
-    top: -15vh;
-    left: -31.5vw;
-    transform: rotate(-77deg);
-}
-
-.signature--left:nth-child(6) {
-    top: -25vh;
-    left: -30.5vw;
-    transform: rotate(-70deg);
-}
-
-.signature--right {
-    left: 32vw;
-    transform: rotate(90deg);
-}
-
-.signature--right:nth-child(7) {
-    top: -25vh;
-    left: 30.5vw;
-    transform: rotate(75deg);
-}
-
-.signature--right:nth-child(8) {
-    top: -15vh;
-    left: 31.5vw;
-}
-
-.signature--right:nth-child(9) {
-    top: -5vh;
-    left: 31.7vw;
-}
-
-.signature--right:nth-child(10) {
-    top: 5vh;
-    left: 31.5vw;
-    transform: rotate(97deg);
-}
-
-.signature--right:nth-child(11) {
-    top: 15vh;
-    left: 30.5vw;
-    transform: rotate(102deg);
-} */
 
 
 
