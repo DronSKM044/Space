@@ -629,20 +629,16 @@ h1 {
 .picture-link {
     position: relative;
     display: block;
-    width: 75%;
+    width: 65%;
     height: auto;
-    transform: rotateY(10deg) translateZ(-100px);
     overflow: hidden;
+    transition: transform 0.2s;
 }
 
 .gallery-picture-item:nth-of-type(2n) .picture-link {
     order: 2;
-    transform: rotateY(-10deg) translateZ(-100px);
 }
 
-/* .gallery-picture-item:hover {
-    transform: rotateY(45deg) translateZ(50px);
-} */
 
 .card-img {
     display: block;
@@ -656,10 +652,10 @@ h1 {
     content: "";
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 1%;
     width: 98%;
     height: 98%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
     background-color: rgba(155, 155, 155, .5);
     border-radius: 5px;
 
