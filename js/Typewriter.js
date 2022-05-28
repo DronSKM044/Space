@@ -14,9 +14,10 @@ class Typewriter {
     "*",
   ];
 
-  constructor(el, range) {
+  constructor(el, range, delay) {
     this.el = el;
     this.range = range;
+    this.delay = delay;
   }
 
   getText() {
@@ -34,6 +35,7 @@ class Typewriter {
     let innerCount = 0;
 
     let writer = () => {
+      let iterationSpeed = 30;
       if (this.el.textContent[count] != text[count]) {
         this.el.textContent =
           this.el.textContent.substr(0, count) +
@@ -49,9 +51,10 @@ class Typewriter {
         range--;
       }
       if (count >= text.length) return;
-      setTimeout(writer, 30);
+      if (text.length > 10) iterationSpeed = iterationSpeed / text.length;
+      setTimeout(writer, iterationSpeed);
     };
-    setTimeout(writer, 8000);
+    setTimeout(writer, this.delay);
   }
 
   render() {
