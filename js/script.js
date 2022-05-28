@@ -11,20 +11,23 @@ window.onload = function () {
     rotate3D(item);
   }
 
-  //  init Typewriter library
-  const textArray = document.querySelectorAll(".planet-link");
+  //  use Typewriter library
 
-  for (let item of textArray) {
+  const itemArray = document.querySelectorAll(".planet-link");
+  const textArray = [];
+  for (let item of itemArray) {
+    textArray.push(item.textContent);
     new Typewriter(item, 9, 8000).render();
   }
 
   const planets = document.querySelectorAll(".planet-item");
 
-  for (let planet of planets) {
+  planets.forEach((planet, index) => {
     planet.addEventListener("mouseover", () => {
+      if (textArray[index] != planet.querySelector("a").textContent) return;
       new Typewriter(planet.querySelector("a"), 9, 10).render();
     });
-  }
+  });
 
   // asteroid control
 
