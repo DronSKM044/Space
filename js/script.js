@@ -29,12 +29,29 @@ window.onload = function () {
     });
   });
 
+  // wait for load main section
+
+  let promise = new Promise((resolve, reject) => {
+    const lastLine = document.querySelector(".x-axis-clone");
+    lastLine.addEventListener("animationend", () => resolve("Animation end"));
+  });
+  promise
+    .then((value) => {
+      document.querySelector("body").classList.remove("--scroll_disable");
+      document.querySelector(".scrollbar").classList.add("--scroll-active");
+      console.log(value);
+    })
+    .then(() => {
+      const scrollbar = document.querySelector(".--scroll-active");
+      const windowHeight =
+        document.querySelector(".section-landing").clientHeight;
+      document.addEventListener("scroll", () => {
+        scrollbar.style.height = `${(window.scrollY * 100) / windowHeight}px`;
+      });
+    });
+
   // asteroid control
 
-  function asteroidControl() {
-    const asteroid = document.querySelector(".asteroid");
-
-    console.log(asteroid.style);
-    requestAnimationFrame(asteroidControl);
-  }
+  // const asteroid = new Element(document.querySelector(".asteroid"), true);
+  // asteroid.init();
 };
