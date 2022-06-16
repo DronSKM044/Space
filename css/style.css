@@ -44,11 +44,25 @@ body.--scroll_disable {
     overflow-y: hidden;
 }
 
+.scrollbar-wrapper {
+    position: fixed;
+    right: 0;
+    width: 1.1vh;
+    height: 100%;
+    background-color: rgba(155, 155, 155, .5);
+    opacity: 0;
+    transition: opacity .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 1px;
+    border-right: 1px;
+    border-color: rgba(242, 242, 242, 0.8);
+}
+
 .scrollbar {
     position: fixed;
     right: 0;
     width: 1vh;
     height: 0;
+    border-radius: 2px;
     background-color: aqua;
 }
 
@@ -497,14 +511,7 @@ h1 {
     }
 }
 
-/* @keyframes move {
 
-    100% {
-        left: 60%;
-        top: 100%;
-    } */
-
-/* } */
 
 
 .sparkles {
@@ -526,6 +533,65 @@ h1 {
     }
 }
 
+.scroll_down {
+    position: absolute;
+    display: flex;
+    bottom: 5%;
+    right: 0;
+    z-index: 99;
+    /* transform: translateX(-50%); */
+}
+
+.scroll_mouse {
+    width: 25px;
+    height: 45px;
+    border: 2px solid rgba(70, 113, 130, 1);
+    border-radius: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0px 0px 20px 2px rgb(24 174 149);
+}
+
+.mouse_wheel {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    border: 1px solid rgba(155, 155, 155, .5);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 1px rgb(105 217 199);
+}
+
+.mouse_wheel::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    height: 2px;
+    width: 2px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    transform: translate(-50%, -50%);
+    animation: scroll_move 1s ease-in-out alternate-reverse infinite;
+
+}
+
+@keyframes scroll_move {
+    from {
+        top: 10%
+    }
+
+    to {
+        top: 90%
+    }
+
+}
+
+.scroll_text {
+    transform: rotate(-90deg);
+}
 
 
 .paralax-earth {
