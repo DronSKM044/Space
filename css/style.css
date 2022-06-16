@@ -9,6 +9,19 @@
     --distance: 100px;
 }
 
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
 @font-face {
     font-family: "Raleway";
     src: url(../fonts/raleway/raleway-800.woff2);
@@ -539,7 +552,8 @@ h1 {
     bottom: 5%;
     right: 0;
     z-index: 99;
-    /* transform: translateX(-50%); */
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
 }
 
 .scroll_mouse {
