@@ -10,28 +10,43 @@
 
 <body class="--scroll_disable">
   <header class="header">
-    <nav class="navigation">
-      <ul class="navigation-list">
-        <li class="navigation-item">
-          <a class="navigation-link" href="#">Про мене</a>
-        </li>
-        <li class="navigation-item">
-          <a class="navigation-link" href="#">Приклади робіт</a>
-        </li>
-        <li class="navigation-item">
-          <a class="navigation-link" href="#">Дай мені роботу</a>
-        </li>
+    <div class="navigation-wrapper">
+      <nav class="navigation">
+        <ul class="navigation-list">
+          <li class="navigation-item">
+            <a class="navigation-link" href="#aboutMe">
+              <span class="link-letter">П</span>
+              <span class="link-letter">р</span>
+              <span class="link-letter">о</span>
+              <span class="link-letter"> &nbsp;</span>
+              <span class="link-letter">м</span>
+              <span class="link-letter">е</span>
+              <span class="link-letter">н</span>
+              <span class="link-letter">е</span>
+            </a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#gallery">Приклади робіт</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#contacts">Контакти</a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="language-change-list">
+        <li class="language-change-item"><a class="language-switch ua" href="#">UA</a></li>
+        <li class="language-change-item"><a class="language-switch en" href="#">EN</a></li>
+        <li class="language-change-item"><a class="language-switch pl" href="#">PL</a></li>
       </ul>
-    </nav>
-    <ul class="language-change-list">
-      <li class="language-change-item"><a class="language-switch ua" href="#">UA</a></li>
-      <li class="language-change-item"><a class="language-switch en" href="#">EN</a></li>
-      <li class="language-change-item"><a class="language-switch pl" href="#">PL</a></li>
-    </ul>
+    </div>
+    <button class="btn header_btn" id="header-opener" type="button">
+      <span class="btn_arrow">></span>
+      <span class="btn_arrow">></span>
+    </button>
   </header>
 
   <main class="main">
-    <h1 class="visualy-hiden">FRONT-END DEVELOPER</h1>
+    <h1 class="visually-hidden">FRONT-END DEVELOPER</h1>
     <section class="section-landing">
       <h2 class="visually-hidden">Интерактивная навигация</h2>
       <div class="planets__orbits">
@@ -109,13 +124,13 @@
             </a>
           </li>
           <li class="planet-item item-2">
-            <a class="planet-link planet-2__link" href="#">Про мене</a>
+            <a class="planet-link planet-2__link" href="#aboutMe">Про мене</a>
           </li>
           <li class="planet-item item-3">
-            <a class="planet-link planet-3__link" href="#">Приклади робіт</a>
+            <a class="planet-link planet-3__link" href="#gallery">Приклади робіт</a>
           </li>
           <li class="planet-item item-4">
-            <a class="planet-link planet-4__link" href="#">Контакти</a>
+            <a class="planet-link planet-4__link" href="#contacts">Контакти</a>
           </li>
         </ul>
       </nav>
@@ -163,7 +178,7 @@
       <div class="paralax-wrapper paralax-earth">
         <span class="visually_hiden"> Паралак ефект Місяця</span>
       </div>
-      <div class="about-wrapper">
+      <div class="about-wrapper" id="aboutMe">
         <h2 class="title planet-1__title-about">AboutMe</h2>
         <img class="my-photo" src="images/my-photo.jpg" alt="моє фото" width="460" height="560">
 
@@ -222,9 +237,9 @@
       <h2 class="title planet-2__title-gallery">Galerry</h2>
       <div class="gallery-wrapper">
         <div class="paralax-wrapper paralax-mars">
-          <span class="visually_hiden"> Паралак ефект Марсу</span>
+          <span class="visually_hiden"> Паралакс ефект Марсу</span>
         </div>
-        <ul class="galerry-list">
+        <ul class="galerry-list" id="gallery">
           <li class="gallery-picture-item">
             <a href="" class="picture-link">
               <img class="card-img" src="../images/content/Bouncy.png" alt="Креативна агенція Bouncy">
@@ -263,7 +278,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
+  <footer class="footer" id="contacts">
     <h2 class="footer-social-title visually-hidden">Социальные медиа</h2>
     <ul class="footer-social-list">
       <li class="footer-social-item">
