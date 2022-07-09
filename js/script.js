@@ -69,7 +69,33 @@ window.onload = function () {
         });
       }
 
-      document.addEventListener("scroll", () => {
+      let scrollPosY = 0;
+      let opacity = 10;
+      const scrollDownElem = document.querySelector(".scroll_down");
+      let coords = getCoords(scrollDownElem);
+      document.addEventListener("scroll", (e) => {
+        e.stopPropagation();
+        document.addEventListener("wheel", (event) => {
+          event.stopPropagation();
+          scrollPosY >= 10 || scrollPosY <= -100
+            ? (scrollPosY = 0)
+            : scrollPosY;
+          if (event.deltaY < 0) {
+            opacity >= 10 ? (opacity = 10) : opacity;
+            scrollPosY++;
+            opacity++;
+            scrollDownElem.style.opacity = `${opacity / 10}`;
+            scrollDownElem.style.top = `${scrollPosY + coords.top}px`;
+          }
+          if (event.deltaY > 0) {
+            opacity <= 0 ? (opacity = 0) : opacity;
+            scrollPosY--;
+            opacity--;
+            scrollDownElem.style.opacity = `${opacity / 10}`;
+            scrollDownElem.style.top = `${scrollPosY + coords.top}px`;
+          }
+        });
+
         scrollbar.style.height = `${(window.scrollY * 88) / windowHeight}px`;
         scrollbarPin.style.top = scrollbar.style.height;
         scrollbar.style.backgroundColor = `rgba(${
@@ -93,3 +119,11 @@ window.onload = function () {
   // const asteroid = new Element(document.querySelector(".asteroid"), true);
   // asteroid.init();
 };
+
+function getCoords(elem) {
+  let box = elem.getBoundingClientRect();
+  return {
+    top: box.top + scrollY,
+    left: box.left + scrollX,
+  };
+}
