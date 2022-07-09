@@ -723,11 +723,11 @@ h1 {
 .scroll_down {
     position: absolute;
     display: flex;
-    bottom: 5%;
+    top: 90%;
     right: 0;
     z-index: 99;
     opacity: 0;
-    transition: opacity .5s ease-in-out;
+    transition: .5s ease-in-out;
 }
 
 .scroll_mouse {
@@ -856,18 +856,12 @@ h1 {
 /* .section-about-me{
 
 } */
-.aboutme-svg {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-}
 
-.section-about-me-color-1,
-.section-about-me-color-2 {
-    fill: rgba(70, 113, 213, 1);
+.about-wrapper {
+    min-height: 100vh;
+    padding: 10px;
+    border-bottom: solid 2px white;
 }
-
 
 .my-photo {
     width: 100%;
@@ -895,6 +889,8 @@ h1 {
 
 
 .section-technology {
+    min-height: 50vh;
+    margin-top: 10px;
     background-color: rgba(242, 242, 242, 0.8);
 
 }
