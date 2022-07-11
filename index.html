@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/6dd56db9da.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css" />
+
   <title>MySpace</title>
 </head>
 
@@ -15,25 +17,25 @@
         <ul class="navigation-list">
           <li class="navigation-item">
             <a class="navigation-link" href="#aboutMe">
-              <span class="link-letter">П</span>
-              <span class="link-letter">р</span>
-              <span class="link-letter">о</span>
+              <span class="link-letter">A</span>
+              <span class="link-letter">b</span>
+              <span class="link-letter">o</span>
+              <span class="link-letter">u</span>
+              <span class="link-letter">t</span>
               <span class="link-letter"> &nbsp;</span>
-              <span class="link-letter">м</span>
-              <span class="link-letter">е</span>
-              <span class="link-letter">н</span>
-              <span class="link-letter">е</span>
+              <span class="link-letter">m</span>
+              <span class="link-letter">e</span>
             </a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-link" href="#gallery">Приклади робіт</a>
+            <a class="navigation-link" href="#gallery">Galerry</a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-link" href="#contacts">Контакти</a>
+            <a class="navigation-link" href="#contacts">Contacts</a>
           </li>
         </ul>
       </nav>
-      <ul class="language-change-list">
+      <ul class="language-change-list visually-hidden">
         <li class="language-change-item"><a class="language-switch ua" href="#">UA</a></li>
         <li class="language-change-item"><a class="language-switch en" href="#">EN</a></li>
         <li class="language-change-item"><a class="language-switch pl" href="#">PL</a></li>
@@ -45,10 +47,10 @@
     </button>
   </header>
 
-  <main class="main">
+  <main class="main" id="main">
     <h1 class="visually-hidden">FRONT-END DEVELOPER</h1>
     <section class="section-landing">
-      <h2 class="visually-hidden">Интерактивная навигация</h2>
+      <h2 class="visually-hidden">Interactive navigation</h2>
       <div class="planets__orbits">
         <svg class="orbits" width="100%" height="100%" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid">
           <linearGradient id="LinearGradient1" x1="0" x2="0" y1="0" y2="1">
@@ -124,20 +126,21 @@
             </a>
           </li>
           <li class="planet-item item-2">
-            <a class="planet-link planet-2__link" href="#aboutMe">Про мене</a>
+            <a class="planet-link planet-2__link" href="#aboutMe">About Me</a>
           </li>
           <li class="planet-item item-3">
-            <a class="planet-link planet-3__link" href="#gallery">Приклади робіт</a>
+            <a class="planet-link planet-3__link" href="#gallery">Gallery</a>
           </li>
           <li class="planet-item item-4">
-            <a class="planet-link planet-4__link" href="#contacts">Контакти</a>
+            <a class="planet-link planet-4__link" href="#contacts">Contacts</a>
           </li>
         </ul>
       </nav>
       <div class="landing-introduction">
         <p>
-          Вітаю, моє ім'я Андрій і я починаючий front-end розробник. Мені 35 років. Я живу у Польщі в прекрасному
-          місті Торунь.
+          Greetings, my name is Andrii and I beginner front-end developer, codding is my pasion. I live in Poland in a
+          beautiful
+          city - Torun.
         </p>
       </div>
       <div class="landing-signature__outer">
@@ -160,7 +163,7 @@
         </div>
       </div>
       <div class="scroll_down visually-hidden">
-        <span class="visually-hidden"> Візуальне представлення скролу</span>
+        <span class="visually-hidden"> Scroll</span>
         <div class="scroll_mouse">
           <div class="mouse_wheel"></div>
         </div>
@@ -176,15 +179,14 @@
     </section>
     <section class="section-about-me">
       <div class="paralax-wrapper paralax-earth">
-        <span class="visually-hidden"> Паралак ефект Місяця</span>
+        <span class="visually-hidden"> Moon paralax effect</span>
       </div>
       <div class="about-wrapper" id="aboutMe">
         <h2 class="title planet-1__title-about">AboutMe</h2>
         <img class="my-photo" src="images/my-photo.jpg" alt="моє фото" width="460" height="560">
 
         <div class="about-describe">
-          <p>Мене завжди приваблював світ front-end'у. Я вважаю що вчитись і починати
-            щось нове ніколи не
+          <p>Мене завжди приваблював світ front-end'у. Я вважаю що вчитись і починати щось нове ніколи не
             піздно! Весь свій вільний час я намагаюсь присвячувати
             самовдосконаленню у сфері front-end, я обожнюю вдихати життя у статичне зображення і перетворювати в
             динамічні інтернет сторінки графічні шаблони - this is true magic, i think :)</p>
@@ -217,7 +219,7 @@
     </section>
     <section class="section-technology">
       <div class="technology-wrap">
-        <h2 class="title planet-3__Technology">Tехнології які я використовую</h2>
+        <h2 class="title planet-3__Technology">My Tech Stack</h2>
         <ul class="techology-list">
           <li class="technology-item html">HTML</li>
           <li class="technology-item css">CSS</li>
@@ -226,7 +228,7 @@
           <li class="technology-item gulp">Gulp</li>
 
         </ul>
-        <p> Графічні інструменти </p>
+        <p> Graphic tools </p>
         <ul class="technology-grafics-list">
           <li class="grafics-item figma">Figma</li>
           <li class="grafics-item photoshop">Photoshop</li>
@@ -235,7 +237,7 @@
     </section>
     <section class="section-portfolio">
       <div class="paralax-wrapper paralax-mars">
-        <span class="visually-hidden"> Паралакс ефект Марсу</span>
+        <span class="visually-hidden"> Mars paralax effect</span>
       </div>
       <h2 class="title planet-2__title-gallery">Galerry</h2>
       <div class="gallery-wrapper">
@@ -244,34 +246,34 @@
             <a href="" class="picture-link">
               <img class="card-img" src="../images/content/Bouncy.png" alt="Креативна агенція Bouncy">
             </a>
-            <p class="picture-describe">Опис</p>
+            <p class="picture-describe">Describe</p>
           </li>
           <li class="gallery-picture-item">
             <a href="" class="picture-link">
               <img class="card-img" src="../images/content/Scandi.png" alt="інтер'єр агенція Scandi">
             </a>
-            <p class="picture-describe">Опис</p>
+            <p class="picture-describe">Describe</p>
           </li>
           <li class="gallery-picture-item">
             <a href="" class="picture-link">
               <img class="card-img" src="../images/content/ToDoList.png"
                 alt="ToDoList у вигляді стікерів на холодильнику">
             </a>
-            <p class="picture-describe">Опис</p>
+            <p class="picture-describe">Describe</p>
           </li>
           <li class="gallery-picture-item">
             <a href="" class="picture-link">
               <img class="card-img" src="../images/content/Particle-word-explosion.png"
                 alt="деформація слова за допомогою часток">
             </a>
-            <p class="picture-describe">Опис</p>
+            <p class="picture-describe">Describe</p>
           </li>
           <li class="gallery-picture-item">
             <a href="" class="picture-link">
               <img class="card-img" src="../images/content/JohnDowPortfolio.png"
                 alt="фейк сторінка портфоліо веб розробника">
             </a>
-            <p class="picture-describe">Опис</p>
+            <p class="picture-describe">Describe</p>
           </li>
         </ul>
 
@@ -279,30 +281,39 @@
     </section>
   </main>
   <footer class="footer" id="contacts">
-    <h2 class="footer-social-title visually-hidden">Социальные медиа</h2>
-    <ul class="footer-social-list">
-      <li class="footer-social-item">
-        <a class="social-btn" href="https://www.facebook.com">
-          <span class="visually-hidden">Фейсбук</span>
-        </a>
-      </li>
-      <li class="footer-social-item">
-        <a class="social-btn" href="">
-          <span class="visually-hidden">Github</span>
-        </a>
-      </li>
-      <li class="footer-social-item">
-        <a class="social-btn" href="">
-          <span class="visually-hidden">email</span>
-        </a>
+    <h2 class="footer-social-title visually-hidden">Social media</h2>
+    <div class="footer-wrapper">
+      <ul class="footer-social-list">
+        <li class="footer-social-item">
+          <a class="social-btn" href="https://www.facebook.com">
+            <span class="visually-hidden">Facebook</span>
+          </a>
+        </li>
+        <li class="footer-social-item">
+          <a class="social-btn" href="">
+            <span class="visually-hidden">Github</span>
+          </a>
+        </li>
+        <li class="footer-social-item">
+          <a class="social-btn" href="">
+            <span class="visually-hidden">email</span>
+          </a>
 
-    </ul>
+      </ul>
+    </div>
   </footer>
+
   <div class="scrollbar-wrapper">
     <div class="scrollbar --scroll-active">
       <div class="scrollbar_pin"></div>
     </div>
   </div>
+  <div class="link-to-up-wrapper visually-hidden">
+    <a href="#main" class="link-to-up fa-beat-fade"
+      style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;"><i class="fa-solid fa-arrow-up"></i>
+    </a>
+  </div>
+
   <script src="js/Typewriter.js"></script>
   <script src="js/ElementControl.js"></script>
   <script src="js/script.js" type="module"></script>
