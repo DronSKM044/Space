@@ -65,6 +65,7 @@ window.onload = function () {
 
       function scrollBarHandler() {
         document.addEventListener("mousemove", (e) => {
+          e.stopPropagation();
           scrollbarPin.style.top = `${e.clientY}px`;
         });
       }
@@ -73,8 +74,24 @@ window.onload = function () {
       let opacity = 10;
       const scrollDownElem = document.querySelector(".scroll_down");
       let coords = getCoords(scrollDownElem);
+
       document.addEventListener("scroll", (e) => {
+        let aboutSectionPosY = document
+          .querySelector(".about-wrapper")
+          .getBoundingClientRect().top;
+        let linkToUp = document.querySelector(".link-to-up-wrapper");
+
+        window.scrollY <= 0 + linkToUp.getBoundingClientRect().height
+          ? linkToUp.classList.add("visually-hidden")
+          : linkToUp;
+
+        aboutSectionPosY <= 0
+          ? linkToUp.classList.remove("visually-hidden")
+          : aboutSectionPosY;
+
+        console.log(aboutSectionPosY);
         e.stopPropagation();
+        e.preventDefault();
         document.addEventListener("wheel", (event) => {
           event.stopPropagation();
           scrollPosY >= 10 || scrollPosY <= -100
