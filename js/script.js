@@ -32,7 +32,7 @@ window.onload = function () {
   // wait for load main section
 
   let promise = new Promise((resolve, reject) => {
-    const circle = document.querySelector(".circle-1");
+    const circle = document.querySelector(".circle-2");
     circle.addEventListener("animationend", () => resolve("Animation end"));
   });
 
@@ -59,7 +59,7 @@ window.onload = function () {
         document.querySelector(".section-landing").clientHeight;
       const scrollbarPin = document.querySelector(".scrollbar_pin");
 
-      scrollbarPin.addEventListener("mousedown", scrollBarHandler);
+      // scrollbarPin.addEventListener("mousedown", scrollBarHandler);
 
       scrollbarPin.addEventListener("mouseup", () => {});
 
@@ -89,7 +89,6 @@ window.onload = function () {
           ? linkToUp.classList.remove("visually-hidden")
           : aboutSectionPosY;
 
-        console.log(aboutSectionPosY);
         e.stopPropagation();
         e.preventDefault();
         document.addEventListener("wheel", (event) => {
@@ -113,7 +112,7 @@ window.onload = function () {
           }
         });
 
-        scrollbar.style.height = `${(window.scrollY * 88) / windowHeight}px`;
+        scrollbar.style.height = `${(window.scrollY * 95) / windowHeight}px`;
         scrollbarPin.style.top = scrollbar.style.height;
         scrollbar.style.backgroundColor = `rgba(${
           ((window.scrollY * 100) / windowHeight) * 0.5

@@ -6,7 +6,6 @@ export function rotate3D(el) {
   if (el !== undefined) {
     el.addEventListener("mousemove", (e) => {
       halfHeight = el.offsetHeight / 2;
-      console.log(startY);
       el.style.transform = `rotateX(${
         (e.offsetY - halfHeight) / 30
       }deg) rotateY(${(e.offsetX - halfHeight) / 30}deg) `;

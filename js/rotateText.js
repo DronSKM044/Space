@@ -6,7 +6,7 @@ export function rotateMain(value) {
 
   for (let item of inner) {
     value = value / 5;
-    deg += Math.sin(value / 200) + value / 100;
+    deg += Math.sin(value / 1000) + value / 100;
     deg += 50;
     item.style.transform = `rotate(${deg}deg)`;
   }
