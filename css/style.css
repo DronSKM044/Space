@@ -823,7 +823,8 @@ h1 {
 
 
 .paralax-earth {
-    background: url(../images/moon-2285628_1280.jpg) fixed;
+    background: url(../images/moon-2285628_1280.jpg) no-repeat fixed, black;
+    background-size: cover;
 }
 
 .about-wrapper {
@@ -926,6 +927,7 @@ h1 {
 .about-ukranian {
     text-transform: uppercase;
 }
+
 
 
 .section-technology {
@@ -1056,6 +1058,7 @@ h1 {
 }
 
 
+
 .picture-link {
     position: relative;
     display: block;
@@ -1063,6 +1066,18 @@ h1 {
     height: auto;
     overflow: hidden;
     transition: transform 0.2s;
+}
+
+.picture-describe {
+    align-self: flex-start;
+    height: 100%;
+    width: 35%;
+    padding: 10px;
+    text-align: justify;
+}
+
+.picture-describe a {
+    color: rgba(130, 197, 245, 0.937);
 }
 
 .gallery-picture-item:nth-of-type(2n) .picture-link {
@@ -1119,7 +1134,8 @@ h1 {
 }
 
 .paralax-mars {
-    background: url(../images/onTheMars.jpg) fixed;
+    background: url(../images/onTheMars.jpg) no-repeat fixed, black;
+    background-size: cover;
 }
 
 .footer {
@@ -1165,11 +1181,12 @@ h1 {
 
 .social-btn {
     display: block;
+    transform: scale(0.8);
     transition: transform .5s ease;
 }
 
 .social-btn:hover {
-    transform: scale(1.2);
+    transform: scale(1);
 }
 
 .footer-contacts {
