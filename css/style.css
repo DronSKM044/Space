@@ -62,6 +62,15 @@ body.--scroll_disable {
     overflow-y: hidden;
 }
 
+.title {
+    font-size: 48px;
+    line-height: 48px;
+    padding: 24px;
+    margin: 24px 0;
+    text-decoration: underline 2px solid white;
+
+}
+
 .scrollbar-wrapper {
     position: fixed;
     right: 0;
@@ -289,6 +298,7 @@ body.--scroll_disable {
     background-color: rgba(7, 7, 7, 1);
     background-image: url('../images/sky-pattern-2.jpg'), url('../images/sky-pattern.jpg');
     background-blend-mode: color-dodge;
+    padding-bottom: 100px;
 }
 
 h1 {
@@ -730,7 +740,7 @@ h1 {
     background-image: url("../images/assets/sparkle.png");
     background-position: left 0px;
     transform: scale(.3);
-    animation: sparkles-anim 1.5s steps(9) infinite;
+    animation: sparkles-anim 1.5s steps(9);
 }
 
 @keyframes sparkles-anim {
@@ -806,6 +816,12 @@ h1 {
 }
 
 
+
+.section-about-me {
+    margin-bottom: 150px;
+}
+
+
 .paralax-earth {
     background: url(../images/moon-2285628_1280.jpg) fixed;
 }
@@ -814,7 +830,9 @@ h1 {
     position: relative;
     display: grid;
     grid-template-columns: 40% auto;
-    grid-template-rows: 30px auto;
+    grid-template-rows: auto;
+    border-bottom: solid 2px white;
+    min-height: 100vh;
     width: 80%;
     margin: 0 auto;
     padding: 20px;
@@ -823,14 +841,19 @@ h1 {
 
 .planet-1__title-about {
     grid-column: 1/3;
+    color: white;
 }
 
-.landing-introduction {
+.landing-intro {
     position: absolute;
     top: 0;
     right: 0;
     width: 20%;
 
+}
+
+.intro-text {
+    text-align: center;
 }
 
 .landing-signature__outer {
@@ -867,11 +890,6 @@ h1 {
 
 /* About me */
 
-.about-wrapper {
-    min-height: 100vh;
-    padding: 10px;
-    border-bottom: solid 2px white;
-}
 
 .my-photo {
     width: 100%;
@@ -913,14 +931,77 @@ h1 {
 .section-technology {
     min-height: 50vh;
     margin-top: 10px;
-    background-color: rgba(242, 242, 242, 0.8);
+    padding: 20px 10px;
+    background-color: rgba(252, 252, 252, 0.9);
 
 }
 
+.planet-3__technology-title {
+    border-bottom: 2px solid rgba(70, 70, 70, 0.8);
+    color: white;
+    text-decoration: none;
+    text-shadow: 1px 0 1px #000,
+        0 1px 1px #000,
+        -1px 0 1px #000,
+        0 -1px 1px #000;
+    ;
+}
 
+.techology-list {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.technology-item {
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+
+.technology-item:hover {
+    transform: scale(1.2);
+}
+
+.graphic-tools-title {
+    border-bottom: 2px solid rgba(70, 70, 70, 0.8);
+    font-size: 32px;
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 0 1px #000,
+        0 1px 1px #000,
+        -1px 0 1px #000,
+        0 -1px 1px #000;
+    ;
+}
+
+.technology-grafics-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.grafics-item {
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin: 0 auto;
+}
+
+.grafics-item:hover {
+    transform: scale(1.2);
+
+}
+
+/* Gallery */
 
 .gallery-wrapper {
     position: relative;
+    width: 70%;
+    margin: 0 auto;
 }
 
 .galerry-list {
@@ -942,13 +1023,37 @@ h1 {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 100vh;
-    margin-top: 10px;
+    height: auto;
+    padding: 5px 10px;
+    margin-top: 20px;
     perspective: 1000px;
     transform-style: preserve-3d;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+
 }
 
+.gallery-picture-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 1px;
+    height: 100%;
+    background-color: lightblue;
+    box-shadow: -4px 0px 17px 5px rgb(70 70 255 / 90%)
+}
 
+.gallery-picture-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -3px;
+    width: 1px;
+    height: 100%;
+    background-color: lightblue;
+    box-shadow: 4px 0px 17px 5px rgb(70 70 255 / 90%)
+}
 
 
 .picture-link {
@@ -1003,6 +1108,9 @@ h1 {
     left: 150%;
 }
 
+
+
+
 .paralax-wrapper {
     height: 60vh;
     width: 100%;
@@ -1016,20 +1124,79 @@ h1 {
 
 .footer {
     display: flex;
-    justify-content: end;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 30vh;
     width: 100%;
-    background-color: transparent;
+    background: url(../images/onTheMoon.jpg) no-repeat, black;
+    background-position: bottom 25% left;
+    background-size: cover;
 
 }
 
 .footer-wrapper {
-    height: 100%;
-    width: 100%;
-    background: url(../images/onTheMoon.jpg) no-repeat;
-    background-position: bottom 25% left;
-    background-size: cover;
-    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    border: 2px solid white;
+    box-shadow: inset 0px 1px 20px 2px white;
 
+}
+
+.footer-social {
+    width: 50%;
+}
+
+.footer-social-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+
+.footer-social-item .social-btn svg g {
+    fill: aliceblue;
+}
+
+.social-btn {
+    display: block;
+    transition: transform .5s ease;
+}
+
+.social-btn:hover {
+    transform: scale(1.2);
+}
+
+.footer-contacts {
+    align-self: flex-end;
+}
+
+.address {
+    padding: 5px;
+}
+
+.address a {
+    text-decoration: none;
+    font-style: normal;
+    color: white;
+    transition: 0.2s linear;
+}
+
+.address a:hover {
+    text-shadow: 2px 0 2px rgba(130, 197, 245, 0.937), 3px 0 3px rgb(15, 150, 247), 4px 0 4px rgb(15, 150, 247);
+}
+
+.contacts-span {
+    margin-right: 5px;
+    color: rgb(179, 198, 240);
+    text-shadow: 1px 0 1px #000,
+        0 1px 1px #000,
+        -1px 0 1px #000,
+        0 -1px 1px #000;
+    ;
 }
